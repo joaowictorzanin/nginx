@@ -1,37 +1,729 @@
 <!DOCTYPE html>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>NGINX on Railway</title>
-    <meta name="description" content="Choo Choo!" />
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapas Mentais - Micoses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+```
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 40px 20px;
+        min-height: 100vh;
+    }
+    
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    h1 {
+        text-align: center;
+        color: white;
+        margin-bottom: 40px;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .map-container {
+        background: white;
+        border-radius: 20px;
+        padding: 60px 40px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        page-break-inside: avoid;
+    }
+    
+    .map-title {
+        text-align: center;
+        font-size: 1.8em;
+        color: #333;
+        margin-bottom: 50px;
+        font-weight: bold;
+    }
+    
+    .map-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        min-height: 500px;
+    }
+    
+    .central-node {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px 50px;
+        border-radius: 50px;
+        font-size: 1.5em;
+        font-weight: bold;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        min-width: 250px;
+    }
+    
+    .branches {
+        display: flex;
+        gap: 100px;
+        align-items: flex-start;
+    }
+    
+    .branch {
+        flex: 1;
+        position: relative;
+    }
+    
+    .branch-title {
+        background: #ff6b6b;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        text-align: center;
+    }
+    
+    .branch.left .branch-title {
+        background: #4ecdc4;
+    }
+    
+    .sub-branch {
+        margin-bottom: 20px;
+        padding-left: 20px;
+        border-left: 3px solid #e0e0e0;
+    }
+    
+    .sub-title {
+        background: #f0f0f0;
+        padding: 10px 15px;
+        border-radius: 15px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+        font-size: 0.95em;
+    }
+    
+    .item {
+        background: white;
+        border: 2px solid #e0e0e0;
+        padding: 8px 15px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        font-size: 0.9em;
+        color: #555;
+        line-height: 1.4;
+    }
+    
+    @media print {
+        body {
+            background: white;
+            padding: 0;
+        }
+        
+        .map-container {
+            page-break-after: always;
+            margin-bottom: 0;
+        }
+        
+        h1 {
+            color: #333;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .branches {
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .map-title {
+            font-size: 1.4em;
+        }
+        
+        .central-node {
+            font-size: 1.2em;
+            padding: 20px 30px;
+        }
+    }
+</style>
+```
 
-    <link rel="stylesheet" href="/styles.css?v=1.0" />
-  </head>
+</head>
+<body>
+    <div class="container">
+        <h1>Mapas Mentais - Micoses</h1>
 
-  <body>
-    <main>
-      <img
-        src="https://railway.app/brand/logo-light.svg"
-        alt="Railway logo"
-        class="logo"
-      />
+```
+    <!-- MICOSE SUPERFICIAL 1: PITIRÍASE VERSICOLOR -->
+    <div class="map-container">
+        <div class="map-title">1. Pitiríase Versicolor (Micose Superficial)</div>
+        <div class="map-content">
+            <div class="branches">
+                <div class="branch left">
+                    <div class="branch-title">Sintomas Clínicos</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Lesões Cutâneas</div>
+                        <div class="item">Máculas hipo ou hiperpigmentadas</div>
+                        <div class="item">Coloração variável: branca, amarela, marrom ou rosada</div>
+                        <div class="item">Descamação fina (farinácea)</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Localização</div>
+                        <div class="item">Tronco, pescoço e braços</div>
+                        <div class="item">Áreas seborreicas</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Características</div>
+                        <div class="item">Assintomática ou leve prurido</div>
+                        <div class="item">Mais evidente após exposição solar</div>
+                    </div>
+                </div>
+                
+                <div class="central-node">
+                    Pitiríase<br>Versicolor<br>
+                    <small style="font-size: 0.6em;">(Malassezia spp.)</small>
+                </div>
+                
+                <div class="branch">
+                    <div class="branch-title">Diagnóstico</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Clínico</div>
+                        <div class="item">Inspeção das lesões características</div>
+                        <div class="item">Sinal da unha (acentuação da descamação)</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Direto</div>
+                        <div class="item">Microscopia com KOH a 10-20%</div>
+                        <div class="item">Presença de hifas curtas e leveduras</div>
+                        <div class="item">Aspecto de "espaguete e almôndegas"</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Lâmpada de Wood</div>
+                        <div class="item">Fluorescência amarelo-dourada</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      <h1>NGINX on Railway</h1>
+    <!-- MICOSE SUPERFICIAL 2: DERMATOFITOSE (TINHA) -->
+    <div class="map-container">
+        <div class="map-title">2. Dermatofitose - Tinea Corporis (Micose Superficial)</div>
+        <div class="map-content">
+            <div class="branches">
+                <div class="branch left">
+                    <div class="branch-title">Sintomas Clínicos</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Lesões Cutâneas</div>
+                        <div class="item">Lesões circulares ou anulares</div>
+                        <div class="item">Bordas elevadas e eritematosas</div>
+                        <div class="item">Centro claro com descamação</div>
+                        <div class="item">Expansão centrífuga</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Sintomatologia</div>
+                        <div class="item">Prurido variável (leve a intenso)</div>
+                        <div class="item">Sensação de queimação</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Localização</div>
+                        <div class="item">Áreas expostas do corpo</div>
+                        <div class="item">Braços, pernas, tronco</div>
+                    </div>
+                </div>
+                
+                <div class="central-node">
+                    Tinea<br>Corporis<br>
+                    <small style="font-size: 0.6em;">(Dermatófitos)</small>
+                </div>
+                
+                <div class="branch">
+                    <div class="branch-title">Diagnóstico</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Clínico</div>
+                        <div class="item">Observação das lesões características</div>
+                        <div class="item">Padrão de distribuição</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Micológico Direto</div>
+                        <div class="item">Raspado de escamas com KOH</div>
+                        <div class="item">Visualização de hifas hialinas septadas</div>
+                        <div class="item">Hifas ramificadas</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Cultura</div>
+                        <div class="item">Ágar Sabouraud com antibióticos</div>
+                        <div class="item">Identificação da espécie</div>
+                        <div class="item">Crescimento em 7-14 dias</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      <p>
-        Choo Choo! This is an example of an NGINX static site running on
-        Railway.
-        <a
-          href="https://github.com/railwayapp/starters/tree/master/examples/nginx"
-          >View source</a
-        >.
-      </p>
-    </main>
+    <!-- MICOSE SUBCUTÂNEA 1: ESPOROTRICOSE -->
+    <div class="map-container">
+        <div class="map-title">3. Esporotricose (Micose Subcutânea)</div>
+        <div class="map-content">
+            <div class="branches">
+                <div class="branch left">
+                    <div class="branch-title">Sintomas Clínicos</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Forma Linfocutânea (mais comum)</div>
+                        <div class="item">Nódulo inicial no local de inoculação</div>
+                        <div class="item">Lesões nodulares ao longo do trajeto linfático</div>
+                        <div class="item">Pode ulcerar e drenar material seropurulento</div>
+                        <div class="item">Cordão linfático endurecido</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Forma Cutânea Fixa</div>
+                        <div class="item">Lesão única localizada</div>
+                        <div class="item">Pápula, nódulo ou placa</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Localização</div>
+                        <div class="item">Membros superiores (mãos, antebraços)</div>
+                        <div class="item">Face e membros inferiores</div>
+                    </div>
+                </div>
+                
+                <div class="central-node">
+                    Esporotricose<br>
+                    <small style="font-size: 0.6em;">(Sporothrix schenckii)</small>
+                </div>
+                
+                <div class="branch">
+                    <div class="branch-title">Diagnóstico</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Clínico</div>
+                        <div class="item">História de trauma com matéria orgânica</div>
+                        <div class="item">Lesões nodulares linfocutâneas</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Direto</div>
+                        <div class="item">Raramente visualiza o fungo</div>
+                        <div class="item">Células leveduriformes (corpo asteroide)</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Cultura</div>
+                        <div class="item">Coleta de secreção ou biópsia</div>
+                        <div class="item">Crescimento em 3-5 dias</div>
+                        <div class="item">Conversão dimórfica (25°C e 37°C)</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Histopatologia</div>
+                        <div class="item">Inflamação granulomatosa</div>
+                        <div class="item">Células gigantes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="/script.js"></script>
-  </body>
+    <!-- MICOSE SUBCUTÂNEA 2: MICETOMA -->
+    <div class="map-container">
+        <div class="map-title">4. Micetoma (Micose Subcutânea)</div>
+        <div class="map-content">
+            <div class="branches">
+                <div class="branch left">
+                    <div class="branch-title">Sintomas Clínicos</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Tríade Clássica</div>
+                        <div class="item">Tumefação (aumento de volume)</div>
+                        <div class="item">Fístulas (trajetos sinuosos)</div>
+                        <div class="item">Grãos (agregados fúngicos ou bacterianos)</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Características</div>
+                        <div class="item">Evolução crônica e progressiva</div>
+                        <div class="item">Deformidade local</div>
+                        <div class="item">Drenagem de secreção purulenta com grãos</div>
+                        <div class="item">Pouca dor (indolor ou oligossintomático)</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Localização</div>
+                        <div class="item">Pés e pernas (principalmente)</div>
+                        <div class="item">Mãos e braços</div>
+                    </div>
+                </div>
+                
+                <div class="central-node">
+                    Micetoma<br>
+                    <small style="font-size: 0.6em;">(Fungos ou Actinomicetos)</small>
+                </div>
+                
+                <div class="branch">
+                    <div class="branch-title">Diagnóstico</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Clínico</div>
+                        <div class="item">Observação da tríade clínica</div>
+                        <div class="item">Coleta e análise dos grãos</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Direto dos Grãos</div>
+                        <div class="item">Grãos brancos: eumicetoma</div>
+                        <div class="item">Grãos negros: actinomicetoma</div>
+                        <div class="item">Microscopia com KOH</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Cultura</div>
+                        <div class="item">Identificação do agente etiológico</div>
+                        <div class="item">Diferenciação entre fúngico e bacteriano</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Imagem</div>
+                        <div class="item">Raio-X: destruição óssea</div>
+                        <div class="item">RM: extensão da lesão</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MICOSE PROFUNDA 1: PARACOCCIDIOIDOMICOSE -->
+    <div class="map-container">
+        <div class="map-title">5. Paracoccidioidomicose (Micose Profunda/Sistêmica)</div>
+        <div class="map-content">
+            <div class="branches">
+                <div class="branch left">
+                    <div class="branch-title">Sintomas Clínicos</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Forma Crônica (Adultos)</div>
+                        <div class="item">Lesões pulmonares (tosse, dispneia)</div>
+                        <div class="item">Lesões mucocutâneas (úlceras em mucosa oral)</div>
+                        <div class="item">Estomatite moriforme</div>
+                        <div class="item">Linfadenopatia</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Forma Aguda/Subaguda (Juvenil)</div>
+                        <div class="item">Linfadenomegalia generalizada</div>
+                        <div class="item">Hepatoesplenomegalia</div>
+                        <div class="item">Febre, perda de peso</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Manifestações Gerais</div>
+                        <div class="item">Lesões cutâneas papulosas ou ulceradas</div>
+                        <div class="item">Comprometimento multissistêmico</div>
+                    </div>
+                </div>
+                
+                <div class="central-node">
+                    Paracoccidioido-<br>micose<br>
+                    <small style="font-size: 0.6em;">(Paracoccidioides brasiliensis)</small>
+                </div>
+                
+                <div class="branch">
+                    <div class="branch-title">Diagnóstico</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Direto</div>
+                        <div class="item">Raspado de lesões ou escarro</div>
+                        <div class="item">KOH: células leveduriformes</div>
+                        <div class="item">"Roda de leme" (brotamentos múltiplos)</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Cultura</div>
+                        <div class="item">Ágar Sabouraud a 25°C e 37°C</div>
+                        <div class="item">Crescimento lento (15-30 dias)</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Histopatologia</div>
+                        <div class="item">Biópsia de lesões</div>
+                        <div class="item">Granulomas com células gigantes</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Sorologia</div>
+                        <div class="item">Imunodifusão dupla</div>
+                        <div class="item">ELISA</div>
+                        <div class="item">Controle de tratamento</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MICOSE PROFUNDA 2: HISTOPLASMOSE -->
+    <div class="map-container">
+        <div class="map-title">6. Histoplasmose (Micose Profunda/Sistêmica)</div>
+        <div class="map-content">
+            <div class="branches">
+                <div class="branch left">
+                    <div class="branch-title">Sintomas Clínicos</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Forma Pulmonar Aguda</div>
+                        <div class="item">Febre, tosse, fadiga</div>
+                        <div class="item">Dor torácica</div>
+                        <div class="item">Mialgia e artralgia</div>
+                        <div class="item">Pode ser assintomática</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Forma Disseminada</div>
+                        <div class="item">Febre prolongada e perda de peso</div>
+                        <div class="item">Hepatoesplenomegalia</div>
+                        <div class="item">Linfadenopatia</div>
+                        <div class="item">Lesões cutaneomucosas</div>
+                        <div class="item">Pancitopenia</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Forma Crônica Pulmonar</div>
+                        <div class="item">Tosse crônica produtiva</div>
+                        <div class="item">Dispneia progressiva</div>
+                        <div class="item">Perda de peso</div>
+                    </div>
+                </div>
+                
+                <div class="central-node">
+                    Histoplasmose<br>
+                    <small style="font-size: 0.6em;">(Histoplasma capsulatum)</small>
+                </div>
+                
+                <div class="branch">
+                    <div class="branch-title">Diagnóstico</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Direto</div>
+                        <div class="item">Microscopia de escarro, sangue, medula</div>
+                        <div class="item">Pequenas leveduras intracelulares</div>
+                        <div class="item">Coloração de Giemsa ou Wright</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Cultura</div>
+                        <div class="item">Ágar Sabouraud com antibióticos</div>
+                        <div class="item">Crescimento lento (2-4 semanas)</div>
+                        <div class="item">Conversão de fase a 37°C</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Sorologia</div>
+                        <div class="item">Imunodifusão</div>
+                        <div class="item">Fixação de complemento</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Detecção de Antígeno</div>
+                        <div class="item">Antígeno galactomanana em urina/soro</div>
+                        <div class="item">Alta sensibilidade</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MICOSE OPORTUNISTA 1: CANDIDÍASE -->
+    <div class="map-container">
+        <div class="map-title">7. Candidíase Invasiva (Micose Oportunista)</div>
+        <div class="map-content">
+            <div class="branches">
+                <div class="branch left">
+                    <div class="branch-title">Sintomas Clínicos</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Candidemia</div>
+                        <div class="item">Febre persistente</div>
+                        <div class="item">Calafrios</div>
+                        <div class="item">Hipotensão (choque séptico)</div>
+                        <div class="item">Não responde a antibacterianos</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Candidíase Disseminada</div>
+                        <div class="item">Comprometimento de múltiplos órgãos</div>
+                        <div class="item">Endocardite, meningite</div>
+                        <div class="item">Lesões cutâneas (pápulas eritematosas)</div>
+                        <div class="item">Coriorretinite</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Fatores de Risco</div>
+                        <div class="item">Imunossupressão</div>
+                        <div class="item">Cateteres venosos centrais</div>
+                        <div class="item">Cirurgias abdominais</div>
+                        <div class="item">Antibioticoterapia prolongada</div>
+                    </div>
+                </div>
+                
+                <div class="central-node">
+                    Candidíase<br>Invasiva<br>
+                    <small style="font-size: 0.6em;">(Candida spp.)</small>
+                </div>
+                
+                <div class="branch">
+                    <div class="branch-title">Diagnóstico</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Hemoculturas</div>
+                        <div class="item">Coleta de múltiplas amostras</div>
+                        <div class="item">Sensibilidade baixa (50%)</div>
+                        <div class="item">Identificação da espécie</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Direto</div>
+                        <div class="item">Microscopia de fluidos corporais</div>
+                        <div class="item">Leveduras e pseudo-hifas</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Biomarcadores</div>
+                        <div class="item">Beta-D-glucana sérica</div>
+                        <div class="item">Manana e anti-manana</div>
+                        <div class="item">PCR (reação em cadeia da polimerase)</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Cultura</div>
+                        <div class="item">Crescimento rápido (24-48h)</div>
+                        <div class="item">Teste de sensibilidade antifúngica</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MICOSE OPORTUNISTA 2: CRIPTOCOCOSE -->
+    <div class="map-container">
+        <div class="map-title">8. Criptococose (Micose Oportunista)</div>
+        <div class="map-content">
+            <div class="branches">
+                <div class="branch left">
+                    <div class="branch-title">Sintomas Clínicos</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Meningoencefalite (mais comum)</div>
+                        <div class="item">Cefaleia progressiva</div>
+                        <div class="item">Febre e náuseas/vômitos</div>
+                        <div class="item">Alteração do estado mental</div>
+                        <div class="item">Rigidez de nuca</div>
+                        <div class="item">Fotofobia</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Forma Pulmonar</div>
+                        <div class="item">Tosse, dispneia</div>
+                        <div class="item">Dor torácica</div>
+                        <div class="item">Pode ser assintomática</div>
+                        <div class="item">Nódulos ou infiltrados na radiografia</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Forma Cutânea</div>
+                        <div class="item">Pápulas, nódulos ou úlceras</div>
+                        <div class="item">Lesões umbilicadas</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">População de Risco</div>
+                        <div class="item">Pacientes HIV/AIDS (CD4 < 100)</div>
+                        <div class="item">Transplantados</div>
+                        <div class="item">Uso de corticosteroides</div>
+                    </div>
+                </div>
+                
+                <div class="central-node">
+                    Criptococose<br>
+                    <small style="font-size: 0.6em;">(Cryptococcus neoformans/<br>C. gattii)</small>
+                </div>
+                
+                <div class="branch">
+                    <div class="branch-title">Diagnóstico</div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame do Líquor</div>
+                        <div class="item">Punção lombar obrigatória</div>
+                        <div class="item">Pressão de abertura elevada</div>
+                        <div class="item">Pleocitose linfocítica</div>
+                        <div class="item">Glicose diminuída, proteína aumentada</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Exame Direto (Tinta da China)</div>
+                        <div class="item">Líquor, escarro, sangue</div>
+                        <div class="item">Leveduras encapsuladas</div>
+                        <div class="item">Halo claro (cápsula polissacarídica)</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Antígeno Criptocócico</div>
+                        <div class="item">Látex ou imunocromatografia</div>
+                        <div class="item">Sensibilidade >95% no líquor</div>
+                        <div class="item">Pode ser feito em soro</div>
+                        <div class="item">Útil para acompanhamento</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Cultura</div>
+                        <div class="item">Crescimento em 2-5 dias</div>
+                        <div class="item">Colônias mucoides</div>
+                        <div class="item">Identificação da espécie</div>
+                    </div>
+                    
+                    <div class="sub-branch">
+                        <div class="sub-title">Histopatologia</div>
+                        <div class="item">Coloração com mucicarmim</div>
+                        <div class="item">Cápsula em vermelho</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Script para impressão
+    window.onload = function() {
+        console.log('Mapas mentais carregados com sucesso!');
+    };
+</script>
+```
+
+</body>
 </html>
